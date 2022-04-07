@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/itemMenu">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.ubaya.ubayalibrary_160419040.view.BookListFragment"
+        android:label="List Book"
+        tools:layout="@layout/fragment_book_list">
+        <action
+            android:id="@+id/actionBookDetail"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.ubaya.ubayalibrary_160419040.view.BookDetailFragment"
+        android:label="Detail Book"
+        tools:layout="@layout/fragment_book_detail">
+        <argument
+            android:name="bookid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/publisherListFragment"
+        android:name="com.ubaya.ubayalibrary_160419040.view.PublisherListFragment"
+        android:label="Publisher List"
+        tools:layout="@layout/fragment_publisher_list">
+        <action
+            android:id="@+id/actionPublisherDetail"
+            app:destination="@id/publisherDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/publisherDetailFragment"
+        android:name="com.ubaya.ubayalibrary_160419040.view.PublisherDetailFragment"
+        android:label="Publisher Detail"
+        tools:layout="@layout/fragment_publisher_detail">
+        <argument android:name="idpublisher"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemMenu"
+        android:name="com.ubaya.ubayalibrary_160419040.view.MainFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/actionMainBook"
+            app:destination="@id/bookListFragment" />
+        <action
+            android:id="@+id/actionMainPublisher"
+            app:destination="@id/publisherListFragment" />
+        <action
+            android:id="@+id/action_itemMenu_to_authorListFragment"
+            app:destination="@id/authorListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemAboutUs"
+        android:name="com.ubaya.ubayalibrary_160419040.view.AboutUsFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.ubaya.ubayalibrary_160419040.view.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/authorListFragment"
+        android:name="com.ubaya.ubayalibrary_160419040.view.AuthorListFragment"
+        android:label="List Author"
+        tools:layout="@layout/fragment_author_list" />
+</navigation>
